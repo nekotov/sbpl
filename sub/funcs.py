@@ -2,13 +2,16 @@
 This should be a list of all functions in programming language.
 With "OP_" prefix.
 """
+
 from sub.sub import *
+
 
 OP_PUSH = iota()
 OP_POP = iota()
 OP_ADD = iota()
 OP_SUB = iota()
 OP_PRINT = iota()
+OP_RET = iota()
 FUNCS_SIZE = iota()
 
 
@@ -16,8 +19,8 @@ def PUSH(value: int) -> tuple:
     return OP_PUSH, value
 
 
-def POP(value: int):
-    return OP_POP, value
+def POP():
+    return OP_POP,
 
 
 def ADD():
@@ -32,9 +35,13 @@ def PRINT():
     return OP_PRINT,
 
 
+def RET():
+    return OP_RET,
+
+
 def interpret(commands):
     stack = []
-    assert FUNCS_SIZE == 5, "Add implementation to interpret"
+    assert FUNCS_SIZE == 6, "Add implementation to interpret"
     for com in commands:
         if com[0] == OP_PUSH:
             stack.append(com[1])
@@ -51,3 +58,5 @@ def interpret(commands):
         elif com[0] == OP_PRINT:
             a = stack.pop()
             print(a)
+        elif com[0] == OP_RET:
+            return stack.pop()
