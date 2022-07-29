@@ -2,8 +2,17 @@
 This module is sub functions for project.
 """
 
-
 _iota_global = 0
+
+
+def show_info():
+    print("     JUST SBPL...")  # todo
+    print()
+
+
+def show_usage():
+    print("     You need to provide file name to execute")  # todo
+    print()
 
 
 def iota(reset: object = False) -> int:
