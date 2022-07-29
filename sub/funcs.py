@@ -19,23 +19,23 @@ def PUSH(value: int) -> tuple:
     return OP_PUSH, value
 
 
-def POP():
+def POP(value=None):
     return OP_POP,
 
 
-def ADD():
+def ADD(value=None):
     return OP_ADD,
 
 
-def SUB():
+def SUB(value=None):
     return OP_SUB,
 
 
-def PRINT():
+def PRINT(value=None):
     return OP_PRINT,
 
 
-def RET():
+def RET(value=None):
     return OP_RET,
 
 
